@@ -1,56 +1,25 @@
-
-
-// function checkNumber(arr) {
-//     for(let i = 0; i < arr.length; i++) {
-//         if(!isNaN(arr[i])) {
-//         
-//         }
-//     }
-// }
-
-// function checkOperand(arr) {
-
-//     for(let i = 0; i < arr.length; i++) {
-//         let operand = ['+','-','*','/']
-//         if (operand.includes(arr[i + 1])) {
-//    
-//         }
-//     }
-// }
-
-//if (isNaN(arr[i + 1])) || 
-
-//typeof
-
-
-function acceptNull() {
-    if (arr.includes[null]) {
-
-    }
-}
-
-function acceptUndef() {
-    let undef = `' '`
-    if (arr.includes(undef)) {
-        return undefined
-    }
-}
-
-
-
-
-const calculate = (arr) {
+const calculate = (arr) => {
     const operands = ['+', '-', '/', '*']
-    for (let i = 0; i < arr.length; i++) {
-        if (arr.includes([operands]) && arr.includes(!isNaN(arr[i])) {
-            return eval(arr)
-        } else if (arr.includes(arr[null]) {
-            let null = 0
-            return eval(arr)
+    let newArr = []
 
-        }
+    for (let i = 0; i < arr.length; i++) {
+        if (((!isNaN(arr[i]) && arr[i] !== '' && arr[i] !== ' ') || operands.includes(arr[i]))) newArr.push(arr[i])
+    }
+    if (newArr.length !== 3 || !operands.includes(newArr[1])) return NaN
+
+    switch (newArr[1]) {
+        case '+':
+            return Number(newArr[0]) + Number(newArr[2])
+        case '-':
+            return Number(newArr[0]) - Number(newArr[2])
+        case '*':
+            return Number(newArr[0]) * Number(newArr[2])
+        case '/':
+            return Number(newArr[0]) / Number(newArr[2])
+
     }
 
-
-
 }
+
+
+module.exports = calculate
